@@ -19,9 +19,17 @@ body {
 	display: -webkit-flex;
   -webkit-align-items: center;
   -webkit-justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -34,9 +42,17 @@ body {
 	display: -webkit-flex;
   -webkit-align-items: center;
   -webkit-justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   position: absolute;
   padding-bottom: 30px;
@@ -80,7 +96,9 @@ button {
 	}
 
 .cityLabel {
-	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);
+	        transform: translateX(-50%);
 	padding: 4px 6px;
 	border-radius: 6px;
 	background-color: rgba(255,255,255,0.7);
