@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="no-js" manifest="./cache.manifest">
+  <head>
+    <meta charset="utf-8">
+    <title>Know Your Globe</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" href="style/main.css">
+
+
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div id="map">
+      
+    </div>
+
+    <button class="zoom-control zoom-out"></button>
+    <button class="zoom-control zoom-in"></button>
+
+    <div class="centred-bottom-overlay" id="solution">
+      <div class="overlay-content">
+        <div class="block-content solution">
+          <span class="answer-judgement"></span> <span class="answer-message"></span>.
+        </div>
+        <div class="final-stats answer-button">
+          <span class="city-name solution1Name" id="answer1Text"></span>
+          <span class="latitude">Latitude: <span class="answer1Lat"></span></span>
+        </div>
+        <div class="final-stats answer-button alternate">
+          <span class="city-name solution2Name" id="answer2Text"></span>
+          <span class="latitude">Latitude: <span class="answer2Lat"></span></span>
+        </div>
+        <div class="button-row">
+          <button id='next' class="plain-button">Next Question</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="centred-overlay" id="startSplash">
+      <div class="overlay-content">
+        <img src="images/kyg.png">
+        <div class="block-content">
+          Just how well do you know your globe? Which is further north, Shanghai or Los Angeles? It may be harder than you think!
+        </div>
+        <button id='startButton' class="plain-button">Start</button>
+      </div>
+    </div>
+
+    <div class="centred-overlay" id="question">
+      <div class="overlay-content">
+        <img src="images/kyg.png" class="mini-logo">
+        <div class="block-content question">
+          Which city is further <span class="question-keyword"></span>?
+        </div>
+        <button id='answer1' class="answer-button">
+          <span class="city-name answer1Name"></span>
+          <span class="country-name answer1Country"></span>
+        </button>
+        <button id='answer2' class="answer-button alternate">
+          <span class="city-name answer2Name"></span>
+          <span class="country-name answer2Country"></span>
+        </button>
+      </div>
+    </div>
+  
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="script/markerwithlabel_packed.js"></script>
+    <script src="script/jquery.easing.1.3.js"></script>
+
+
+    <script src="script/cities.js"></script>
+    <script src="script/main.js"></script>
+
+</body>
+</html>

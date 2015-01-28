@@ -1,0 +1,259 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+html, body, #map { height: 100%; margin: 0; padding: 0;}
+
+body {
+	font-family: 'Lato', sans-serif;
+	color: #333;
+	overflow: hidden;
+}
+
+.answer {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	background: white;
+}
+
+.centred-overlay {
+	display: -webkit-flex;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  pointer-events: none;
+}
+
+.centred-bottom-overlay {
+	display: -webkit-flex;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  padding-bottom: 30px;
+  bottom: 0;
+  left: 100%;
+  pointer-events: none;
+}
+
+.overlay-content {
+	text-align: center;
+}
+
+.block-content {
+	background-color: rgba(255,255,255,0.7);
+	text-align: center;
+	padding: 25px;
+	border-radius: 15px;
+	width: 260px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+button {
+	pointer-events: auto;
+}
+
+.plain-button {
+	background-color: #80F4F4;
+	text-align: center;
+	padding: 5px;
+	border-radius: 6px;
+	border-width: 0;
+	width: 150px;
+	font-weight: 700;
+	font-size: 110%;
+	color: #484848;
+}
+	button.plain-button:hover {
+		background-color: #29d1d1;
+		cursor: pointer;
+	}
+
+.cityLabel {
+	transform: translateX(-50%);
+	padding: 4px 6px;
+	border-radius: 6px;
+	background-color: rgba(255,255,255,0.7);
+	font-size: 140%;
+}
+	.cityLabel .latitude {
+		font-size: 70%;
+		display: block;
+	}
+
+.mini-logo {
+	width: 30%;
+	margin-right: 50%;
+}
+
+.question-keyword {
+	font-weight: 700;
+}
+
+.answer-button {
+	background-color: #80F4F4;
+	display: block;
+	width: 260px;
+	text-align: left;
+	padding: 9px 20px;
+	border-radius: 6px;
+	border-width: 0;
+	margin: 0 auto;
+	color: #484848;
+	position: relative;
+	font-size: 14px;
+}
+	button.answer-button:hover {
+		background-color: #29d1d1;
+		cursor: pointer;
+	}
+	.answer-button .city-name {
+		font-weight: 700;
+		font-size: 120%;
+	}
+	.answer-button .country-name {
+		font-weight: 400;
+		font-size: 90%;
+		display: block;
+	}
+	.answer-button .latitude {
+		font-weight: 400;
+		font-size: 90%;
+		display: block;
+		text-align: right;
+	}
+	.answer-button .latitude span {
+		font-weight: 700;
+	}
+	.answer-button::before {
+		content: "";
+		width: 21px;
+		height: 24px;
+		position: absolute;
+		right: 20px;
+		top: 10px;
+		background: url('../images/pin.png');
+	}
+
+.answer-button.alternate {
+	text-align: right;
+	margin-top: 10px;
+	background-color: rgb(166, 250, 137);
+}
+	button.answer-button.alternate:hover {
+		background-color: rgb(139, 224, 109);
+	}
+	.answer-button.alternate .latitude {
+		text-align: left;
+	}
+	.answer-button.alternate::before {
+		left: 20px;
+	}
+
+.solution {
+	position: relative;
+	width: 200px;
+	background-color: rgba(231, 93, 71, 0.7);
+}
+	.solution::after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: -8px;
+		right: -8px;
+		background: url('../images/incorrect.png');
+		width: 53px;
+		height: 57px;
+	}
+	.solution.correct {
+		background-color: rgba(93, 231, 71, 0.7);
+	}
+	.solution.correct::after {
+		bottom: -15px;
+		right: -25px;
+		background: url('../images/correct.png');
+		width: 83px;
+		height: 60px;
+	}
+
+.button-row {
+	margin-top: 10px;
+}
+
+.final-stats {
+	display: none;
+}
+
+.zoom-control {
+	display: block;
+	width: 26px;
+	height: 26px;
+	border-width: 0;
+	border-radius: 50%;
+	position: absolute;
+	top: 10px;
+	background: rgb(166, 250, 137);
+}
+	.zoom-control:hover {
+		background-color: rgb(139, 224, 109);
+		cursor: pointer;
+	}
+	.zoom-control::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 26px;
+		height: 26px;
+		line-height: 26px;
+		font-size: 16px;
+		font-weight: 700;
+	}
+
+.zoom-out {
+	right: 51%;
+}
+.zoom-out::before {
+	content: "-";
+}
+.zoom-in {
+	left: 51%;
+}
+.zoom-in::before {
+	content: "+";
+}
+
+.answer-judgement {
+	font-weight: 700;
+}
+
+@media only screen and (min-width: 640px) {
+	.mini-logo {
+		width: 25%;
+		margin-right: 30%;
+	}
+	.answer-button {
+		display: inline-block;
+		width: 190px;
+	}
+	.answer-button.alternate {
+		margin-top: 0;
+	}
+	#answer2 {
+		margin-top: 0;
+	}
+	.final-stats {
+		display: inline-block;
+	}
+
+}
