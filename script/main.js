@@ -3,6 +3,10 @@ $(function() {
 	var mapOptions = {
 				  center: { lat: cities[5].lat, lng: cities[5].lng},
 				  zoom: 5,
+				  mapTypeId: "watercolor",
+				  mapTypeControlOptions: {
+				  	mapTypeIds: ["watercolor"]
+				  },
 			    panControl: false,
 			    mapTypeControl: false,
 			    zoomControl: false,
@@ -62,8 +66,9 @@ $(function() {
 		map = new google.maps.Map(document.getElementById('map'),
 		    mapOptions);
 		
-		map.mapTypes.set('mapFeatures', new google.maps.StyledMapType(mapStyle));  
-		map.setMapTypeId('mapFeatures');
+		//map.mapTypes.set('mapFeatures', new google.maps.StyledMapType(mapStyle));  
+		map.mapTypes.set("watercolor", new google.maps.StamenMapType("watercolor"));
+		//map.setMapTypeId('mapFeatures');
 
 	}
 	initialize();
